@@ -1,5 +1,5 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk,messagebox
 import random
 
 def generate_random_number():
@@ -7,7 +7,7 @@ def generate_random_number():
         min_val = int(combo_min.get())
         max_val = int(combo_max.get())
         if min_val > max_val:
-            result.config(text="Ошибка: 'ОТ' больше 'ДО'")
+            messagebox.showerror("Ошибка", "'ОТ' не может быть больше 'ДО'")
         else:
             random_number = random.randint(min_val, max_val)
             result.config(text=f"Случайное число: {random_number}")
